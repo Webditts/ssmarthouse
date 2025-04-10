@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package smarthome;
+
+service DeviceService {
+  rpc TurnOnDevice (DeviceRequest) returns (DeviceResponse);
+  rpc TurnOffDevice (DeviceRequest) returns (DeviceResponse);
+}
+
+message DeviceRequest {
+  string device_id = 1;
+}
+
+message DeviceResponse {
+  string message = 1;
+}

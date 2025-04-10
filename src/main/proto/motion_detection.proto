@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "smart_home";
+option java_outer_classname = "MotionDetectionProto";
+
+// Service definition for Motion Detection
+service MotionDetectionService {
+  // RPC for streaming motion alerts
+  rpc StreamMotionAlerts (MotionDetectionRequest) returns (stream MotionAlert);
+}
+
+// Request message for the motion detection stream
+message MotionDetectionRequest {
+  string sensor_id = 1;  // Unique ID for the motion sensor
+}
+
+// Motion alert message that will be streamed
+message MotionAlert {
+  string timestamp = 1; // Timestamp when the motion was detected
+  string location = 2;  // Location of the sensor where motion was detected
+  string message = 3;   // Message with additional information about the motion alert
+  bool motion_detected = 4; // Whether motion was detected or not (added for clarity)
+}

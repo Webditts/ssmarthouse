@@ -4,6 +4,9 @@
  */
 package com.smarthome;
 import javax.swing.JOptionPane;
+import com.smarthome.SmartLockForm;
+
+
 
 
 /**
@@ -11,13 +14,15 @@ import javax.swing.JOptionPane;
  * @author lewis
  */
 public class Dashboard extends javax.swing.JFrame {
-
+private String currentUser;
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
-        initComponents();
-    }
+   public Dashboard(String username) {
+    this.currentUser = username;
+    initComponents();
+    jLabel1.setText("Welcome " + username + "! Here are your services:");
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -133,18 +138,22 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Opening Smart Lock Control...");
+        SmartLockForm lockForm = new SmartLockForm();
+    lockForm.setVisible(true);
+   
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Opening Appliance Control...");
+         ApplianceControlForm applianceForm = new ApplianceControlForm();
+    applianceForm.setVisible(true);
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Opening Camera Streaming...");
+        CameraStreamingForm cameraForm = new CameraStreamingForm();
+    cameraForm.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -177,7 +186,7 @@ public class Dashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashboard().setVisible(true);
+                new Dashboard("Lewis").setVisible(true);
             }
         });
     }

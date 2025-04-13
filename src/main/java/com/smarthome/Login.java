@@ -127,7 +127,7 @@ public class Login extends javax.swing.JFrame {
         statusLabel.setText("Login successful!");
         System.out.println("Generated JWT: " + token);
         // TODO: Store token for later use or pass it to next form/controller
-        Dashboard dashboard = new Dashboard(); // Make sure this JFrame exists
+        Dashboard dashboard = new Dashboard(username); // Make sure this JFrame exists
         dashboard.setVisible(true);
         this.dispose(); // Close the current LoginForm
     

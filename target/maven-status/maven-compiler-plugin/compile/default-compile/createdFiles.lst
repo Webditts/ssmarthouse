@@ -20,7 +20,6 @@ smarthome/SmartHouse$DeviceResponseOrBuilder.class
 com/smarthome/MotionDetectionForm.class
 smart_home/ApplianceControlServiceGrpc$MethodHandlers.class
 smart_home/SmartLockServiceGrpc$SmartLockServiceFutureStub.class
-com/smarthome/SmartLockForm$4.class
 com/smarthome/SmartLockForm.class
 smart_home/CameraStreamingProto.class
 smart_home/SmartLockProto.class
@@ -73,6 +72,7 @@ smart_home/MotionDetectionServiceGrpc$3.class
 smart_home/SmartLockServiceGrpc$2.class
 smart_home/SmartLockProto$SmartLockStatusOrBuilder.class
 com/smarthome/CameraStreamingForm$3.class
+com/smarthome/ApplianceControlForm$3.class
 com/smarthome/Dashboard$2.class
 smart_home/ApplianceControlProto$ApplianceControlRequestOrBuilder.class
 com/smarthome/Dashboard$5.class
@@ -132,6 +132,7 @@ smart_home/SmartLockProto$SmartLockStatus.class
 com/smarthome/Login.class
 smarthome/DeviceServiceGrpc$1.class
 smart_home/CameraStreamingServiceGrpc$CameraStreamingServiceBlockingStub.class
+com/smarthome/ApplianceControlForm$4.class
 smart_home/SmartLockProto$SmartLockStatusRequest$1.class
 com/smarthome/SmartLockForm$2.class
 smart_home/SmartLockProto$SmartLockStatus$1.class

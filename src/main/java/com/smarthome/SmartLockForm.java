@@ -36,24 +36,17 @@ public class SmartLockForm extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lockIdField = new javax.swing.JTextField();
         lockButton = new javax.swing.JButton();
         unlockButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         statusTextArea = new javax.swing.JTextArea();
+        lockLocationComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("SMart Lock Control");
 
         jLabel2.setText("Lock ID:");
-
-        lockIdField.setText("1");
-        lockIdField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lockIdFieldActionPerformed(evt);
-            }
-        });
 
         lockButton.setText("Lock");
         lockButton.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +66,8 @@ public class SmartLockForm extends javax.swing.JFrame {
         statusTextArea.setRows(5);
         jScrollPane1.setViewportView(statusTextArea);
 
+        lockLocationComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gate", "Main Door ", "Back Door ", "Master Bedroom Door", "Store Door", "Garage Door" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,18 +78,18 @@ public class SmartLockForm extends javax.swing.JFrame {
                         .addGap(160, 160, 160)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(14, 14, 14)
                         .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lockLocationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lockIdField, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(lockButton)
                         .addGap(18, 18, 18)
                         .addComponent(unlockButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,9 +99,9 @@ public class SmartLockForm extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(lockIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lockButton)
-                    .addComponent(unlockButton))
+                    .addComponent(unlockButton)
+                    .addComponent(lockLocationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
@@ -115,13 +110,9 @@ public class SmartLockForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lockIdFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lockIdFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lockIdFieldActionPerformed
-
     private void lockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lockButtonActionPerformed
         // TODO add your handling code here:
-        String lockId = lockIdField.getText();
+        String lockId = (String) lockLocationComboBox.getSelectedItem();
 
     new Thread(() -> {
         try {
@@ -139,7 +130,7 @@ public class SmartLockForm extends javax.swing.JFrame {
             SmartLockResponse response = stub.controlLock(request);
 
             SwingUtilities.invokeLater(() -> {
-                statusTextArea.append("Response: " + response.getMessage() + " (Status: " + response.getStatus() + ")\n");
+                statusTextArea.append("Locking " + lockId + ": " + response.getMessage() + " (Status: " + response.getStatus() + ")\n");
             });
 
             channel.shutdown();
@@ -150,14 +141,13 @@ public class SmartLockForm extends javax.swing.JFrame {
             });
         }
     }).start();
-
         
     }//GEN-LAST:event_lockButtonActionPerformed
 
     private void unlockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unlockButtonActionPerformed
         // TODO add your handling code here:
         
-         String lockId = lockIdField.getText();
+         String lockId = (String) lockLocationComboBox.getSelectedItem();
 
     new Thread(() -> {
         try {
@@ -229,7 +219,7 @@ public class SmartLockForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton lockButton;
-    private javax.swing.JTextField lockIdField;
+    private javax.swing.JComboBox<String> lockLocationComboBox;
     private javax.swing.JTextArea statusTextArea;
     private javax.swing.JButton unlockButton;
     // End of variables declaration//GEN-END:variables

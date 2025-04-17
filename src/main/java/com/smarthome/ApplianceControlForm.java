@@ -33,21 +33,22 @@ public class ApplianceControlForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        applianceIdField = new javax.swing.JTextField();
         toggleCheckBox = new javax.swing.JCheckBox();
         toogleButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         responseTextArea = new javax.swing.JTextArea();
+        applianceComboBox = new javax.swing.JComboBox<>();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Appliances control unit systtem");
 
-        jLabel2.setText("Appliance ID:");
-
-        applianceIdField.setText("id");
+        jLabel2.setText("Appliance");
 
         toggleCheckBox.setText("turn on");
 
@@ -62,6 +63,18 @@ public class ApplianceControlForm extends javax.swing.JFrame {
         responseTextArea.setRows(5);
         jScrollPane1.setViewportView(responseTextArea);
 
+        applianceComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lights", "Fridge", "Fan", "Heater" }));
+        applianceComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                applianceComboBoxItemStateChanged(evt);
+            }
+        });
+        applianceComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                applianceComboBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,9 +87,9 @@ public class ApplianceControlForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(applianceIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(applianceComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
                         .addComponent(toggleCheckBox))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(120, 120, 120)
@@ -94,8 +107,8 @@ public class ApplianceControlForm extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(applianceIdField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(toggleCheckBox))
+                    .addComponent(toggleCheckBox)
+                    .addComponent(applianceComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(toogleButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
@@ -108,7 +121,7 @@ public class ApplianceControlForm extends javax.swing.JFrame {
 
     private void toogleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toogleButtonActionPerformed
         // TODO add your handling code here:
-        String applianceId = applianceIdField.getText();
+        String applianceId = applianceComboBox.getSelectedItem().toString();
     boolean turnOn = toggleCheckBox.isSelected();
 
     new Thread(() -> {
@@ -148,6 +161,14 @@ public class ApplianceControlForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_toogleButtonActionPerformed
 
+    private void applianceComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_applianceComboBoxItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_applianceComboBoxItemStateChanged
+
+    private void applianceComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applianceComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_applianceComboBoxActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -184,7 +205,8 @@ public class ApplianceControlForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField applianceIdField;
+    private javax.swing.JComboBox<String> applianceComboBox;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

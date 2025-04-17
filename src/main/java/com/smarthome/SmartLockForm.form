@@ -30,11 +30,11 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lockLocationComboBox" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lockIdField" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lockButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="unlockButton" min="-2" pref="74" max="-2" attributes="0"/>
@@ -44,7 +44,7 @@
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="64" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,9 +56,9 @@
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lockIdField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lockButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="unlockButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lockLocationComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="61" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
@@ -77,14 +77,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Lock ID:"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="lockIdField">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="1"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lockIdFieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="lockButton">
       <Properties>
@@ -117,5 +109,22 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JComboBox" name="lockLocationComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="6">
+            <StringItem index="0" value="Gate"/>
+            <StringItem index="1" value="Main Door "/>
+            <StringItem index="2" value="Back Door "/>
+            <StringItem index="3" value="Master Bedroom Door"/>
+            <StringItem index="4" value="Store Door"/>
+            <StringItem index="5" value="Garage Door"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
   </SubComponents>
 </Form>

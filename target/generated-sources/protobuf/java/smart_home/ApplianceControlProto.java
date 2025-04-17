@@ -1206,7 +1206,7 @@ public final class ApplianceControlProto {
       "ntrolRequest\022\024\n\014appliance_id\030\001 \001(\t\022\017\n\007tu" +
       "rn_on\030\002 \001(\010\"*\n\030ApplianceControlResponse\022" +
       "\016\n\006status\030\001 \001(\t2a\n\027ApplianceControlServi" +
-      "ce\022F\n\017ToggleAppliance\022\030.ApplianceControl" +
+      "ce\022F\n\017toggleAppliance\022\030.ApplianceControl" +
       "Request\032\031.ApplianceControlResponseB#\n\nsm" +
       "art_homeB\025ApplianceControlProtob\006proto3"
     };

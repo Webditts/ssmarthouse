@@ -19,7 +19,7 @@ public final class ApplianceControlServiceGrpc {
       smart_home.ApplianceControlProto.ApplianceControlResponse> getToggleApplianceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ToggleAppliance",
+      fullMethodName = SERVICE_NAME + '/' + "toggleAppliance",
       requestType = smart_home.ApplianceControlProto.ApplianceControlRequest.class,
       responseType = smart_home.ApplianceControlProto.ApplianceControlResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -32,13 +32,13 @@ public final class ApplianceControlServiceGrpc {
           ApplianceControlServiceGrpc.getToggleApplianceMethod = getToggleApplianceMethod =
               io.grpc.MethodDescriptor.<smart_home.ApplianceControlProto.ApplianceControlRequest, smart_home.ApplianceControlProto.ApplianceControlResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ToggleAppliance"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "toggleAppliance"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   smart_home.ApplianceControlProto.ApplianceControlRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   smart_home.ApplianceControlProto.ApplianceControlResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new ApplianceControlServiceMethodDescriptorSupplier("ToggleAppliance"))
+              .setSchemaDescriptor(new ApplianceControlServiceMethodDescriptorSupplier("toggleAppliance"))
               .build();
         }
       }

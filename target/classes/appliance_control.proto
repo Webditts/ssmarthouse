@@ -4,7 +4,7 @@ option java_package = "smart_home";
 option java_outer_classname = "ApplianceControlProto";
 
 service ApplianceControlService {
-  rpc ToggleAppliance(ApplianceControlRequest) returns (ApplianceControlResponse);
+  rpc toggleAppliance(ApplianceControlRequest) returns (ApplianceControlResponse);
 }
 
 message ApplianceControlRequest {

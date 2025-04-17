@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = false;
+option java_package = "smart_home";
+option java_outer_classname = "SmartLockProto";
+
+package smart_home;
+
+// Service definition
+service SmartLockService {
+  rpc ControlLock(SmartLockRequest) returns (SmartLockResponse);
+  rpc StreamLockStatus(SmartLockStatusRequest) returns (stream SmartLockStatus);
+}
+
+message SmartLockRequest {
+  string lock_id = 1;
+  bool lock = 2;
+}
+
+message SmartLockResponse {
+  string status = 1;
+  string message = 2;
+}
+
+message SmartLockStatusRequest {
+  string lock_id = 1;
+}
+
+message SmartLockStatus {
+  string timestamp = 1;
+  string lock_id = 2;
+  string status = 3; // e.g. "Locked" or "Unlocked"
+}

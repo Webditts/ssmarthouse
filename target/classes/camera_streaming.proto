@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "smart_home";
+option java_outer_classname = "CameraStreamingProto";
+
+service CameraStreamingService {
+  // Server-side streaming RPC
+  rpc StreamCamera(CameraStreamingRequest) returns (stream CameraStreamingResponse);
+}
+
+// Request message to start streaming from a specific camera
+message CameraStreamingRequest {
+  string camera_id = 1;
+}
+
+// Response message that includes the base64-encoded frame data
+message CameraStreamingResponse {
+  string frame_data = 1;
+}

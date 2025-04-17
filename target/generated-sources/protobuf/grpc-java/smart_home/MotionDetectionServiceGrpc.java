@@ -8,14 +8,14 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.56.0)",
+    value = "by gRPC proto compiler (version 1.57.2)",
     comments = "Source: motion_detection.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class MotionDetectionServiceGrpc {
 
   private MotionDetectionServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "MotionDetectionService";
+  public static final java.lang.String SERVICE_NAME = "MotionDetectionService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<smart_home.MotionDetectionProto.MotionDetectionRequest,
@@ -281,9 +281,9 @@ public final class MotionDetectionServiceGrpc {
   private static final class MotionDetectionServiceMethodDescriptorSupplier
       extends MotionDetectionServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MotionDetectionServiceMethodDescriptorSupplier(String methodName) {
+    MotionDetectionServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

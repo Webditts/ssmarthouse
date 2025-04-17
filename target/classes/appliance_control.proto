@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "smart_home";
+option java_outer_classname = "ApplianceControlProto";
+
+service ApplianceControlService {
+  rpc ToggleAppliance(ApplianceControlRequest) returns (ApplianceControlResponse);
+}
+
+message ApplianceControlRequest {
+  string appliance_id = 1;
+  bool turn_on = 2;
+}
+
+message ApplianceControlResponse {
+  string status = 1;
+}

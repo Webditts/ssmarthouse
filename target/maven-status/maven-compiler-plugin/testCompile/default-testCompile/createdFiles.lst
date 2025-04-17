@@ -1,0 +1,5 @@
+MotionDetectionServiceImpl.class
+com/smarthome/models/Device.class
+com/smarthome/services/DeviceService.class
+SmartLockServiceImpl.class
+CameraStreamingServiceImpl.class
